@@ -1,9 +1,8 @@
 (function($){
 	$.fn.JJJud = function(options){
 		// This is the easiest way to have default options.
-        var settings = $.extend($.fn.JJJud.defaults, options);
+        var settings = $.extend( {}, $.fn.JJJud.defaults, options );
         var loop_on_cut = $.fn.JJJud.loop;
-        var _this = this;
 
 			$.fn.JJJud.cutWord = function(elm){
 				var elmHeightRows = 0;
@@ -26,7 +25,7 @@
                 var textOffset = this.getText().substr(0,parseInt(textNumberNeed) + offset);
 
                 // console.log("offset",textOffset);
-
+                console.log("this.the_selected:",this.the_selected)
 	            this.the_selected.html(textOffset);
 
                 this.the_selected.html(textNeed);
@@ -59,25 +58,14 @@
 				return this.the_selected.text();
 			}
 
-			$.fn.JJJud.setLoopInteval = function(){
-				var _this = this;
-				console.log(":",this.the_selected)
-				if($(settings["elmVisibleOnLoop"]).is(":visible")){
-	        		_this.cutWord();
-	        		clearInterval(loop_on_cut);
-	        	}
-			}
-
-
-
-			$.fn.JJJud.setLoop = function(){
-		        var _this = $.fn.JJJud;
-		        var elmSelect = _this.the_selected;
-		        var selecter = settings["elmVisnibleOnLoop"];
-				// loopInterval = setInterval(elmNow.setLoopInteval, 1000);
-				// console.log("aa:",elmSelect)
-				loop_on_cut = setInterval(_this.setLoopInteval, 1000);
-			}
+			// $.fn.JJJud.setLoopInteval = function(){
+			// 	var _this = $(this);
+			// 	// console.log("this:",$(this))
+			// 	if($(settings["elmVisibleOnLoop"]).is(":visible")){
+	  //       		$(this).cutWord();
+	  //       		clearInterval(loop_on_cut);
+	  //       	}
+			// }
 
 			$.fn.JJJud.getHeight = function(){
                 //var padding = parseInt(this.the_selected.css("padding-top")) + parseInt(this.the_selected.css("padding-bottom"));
@@ -111,17 +99,45 @@
 			}
 
 	        // Call our cutWord function.
-	        if(settings["elmVisibleOnLoop"] != null){
-	        	$.fn.JJJud.setLoop();
-		    }else{
+	        // if(settings["elmVisibleOnLoop"] != ""){
+	        	// $.fn.JJJud.setLoop();
+	        	// loop_on_cut = setInterval(function(){
+	        	// 	if($(settings["elmVisibleOnLoop"]).is(":visible")){
+		        // 		$.proxy($.fn.JJJud.cutWord(), this);
+		        // 		clearInterval(loop_on_cut);
+		        // 	}
+	        	// }, 1000);
+
+	        	// loop_on_cut = setInterval(function(){
+	        	// 	if($(settings["elmVisibleOnLoop"]).is(":visible")){
+		        // 		$.proxy($.fn.JJJud.cutWord(), this);
+		        // 		clearInterval(loop_on_cut);
+		        // 	}
+	        	// }, 1000);
+				// elm = loop_on_cut;
+	        	// elm = setInterval(function(){
+	        	// 	$.proxy($.fn.JJJud.cutWord,elm);
+	        	// 	clearInterval(loop_on_cut);
+	        	// }, 1000);
+				// var elm = $.fn.JJJud;
+	        	// loop_on_cut =  setInterval($.proxy(function () {
+	        	// 		// console.log("this.the_selected:",this.the_selected)
+	        	// 		if($(settings["elmVisibleOnLoop"]).is(":visible")){
+				      //       elm.cutWord();
+				      //       clearInterval(loop_on_cut);
+				      //   }
+			       //  }, this), 1000);
+
+		    // }else{
 		    	$.fn.JJJud.cutWord();
-		    }
+		    // }
+
 		});
 	};
 
 	$.fn.JJJud.defaults = {
             "max_rows": 2, // Max row
             "onComplete": $.noop,
-            "elmVisibleOnLoop": null
+            "elmVisibleOnLoop": ""
     };
 })(jQuery);
