@@ -33,13 +33,13 @@
 	        	// 	clearInterval(loop_on_cut);
 	        	// }, 1000);
 				var elm = $.fn.JJJud;
-				console.log("settings:",elm)
 	        	loop_on_cut =  setInterval($.proxy(function () {
-	        			if($(settings["elmVisibleOnLoop"]).is(":visible")){
-				            $.fn.JJJud.cutWord();
-				            clearInterval(loop_on_cut);
-				        }
-			        }, elm), 1000);
+	        		console.log("settings:",settings)
+        			if($(settings["elmVisibleOnLoop"]).is(":visible")){
+			            $.fn.JJJud.cutWord();
+			            clearInterval(loop_on_cut);
+			        }
+		        }, elm), 1000);
 
 		    }else{
 		    	$.fn.JJJud.cutWord();
