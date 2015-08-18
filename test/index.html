@@ -8,14 +8,27 @@
 		$(document).ready(function(){
 			setTimeout(function(){
 				$("body").addClass("loaded");
-			},2000)
-			$("body")
+			},1000)
+
 			$(".panel1 .text1").JJJud({
 				max_rows: 3,
-				elmVisibleOnLoop: ".loaded"
+				waitElement: ".loaded"
 			});
+
 			$(".panel1 .text2").JJJud({
 				max_rows: 2
+			});
+
+			$(".panel1 .text3").JJJud({
+				max_rows: 2
+			});
+
+			$(".panel1 .text4").JJJud({
+				max_rows: 3
+			});
+
+			$(".panel1 .text5").JJJud({
+				max_rows: 4
 			});
 		});
 	</script>
