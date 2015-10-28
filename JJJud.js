@@ -10,7 +10,7 @@
 
         _this.initials = {
         	waitElement: null
-        }
+        };
 
         $.extend(_this, _this.initials);
 
@@ -24,25 +24,25 @@
 	            sumCount += (inputText.match(textCount[i])||[]).length;
 	        }
 	        return sumCount;
-	    }
+	    };
 
 		_this.getText = function(){
 			var _this = this;
 
 			return _this.$el.text();
-		}
+		};
 
 		_this.getHeight = function(){
 			var _this = this;
 
 			return _this.$el.height();
-		}
+		};
 
 		_this.getFontSize = function(){
 			var _this = this;
 
 			return parseInt(_this.$el.css("font-size"));
-		}
+		};
 
 		_this.getMaxHeight = function(){
 
@@ -53,7 +53,7 @@
 			var lineheight = _this.getHeight();
 			_this.$el.text(tempText);
 			return (_this.settings["max_rows"] * lineheight) + (lineheight/2);
-		}
+		};
 		 _this.getLineHeight = function(){
 
 		 	var _this = this;
@@ -63,7 +63,7 @@
 	        var lineheight = _this.getHeight();
 	        _this.$el.text(tempText);
 	        return lineheight;
-	    }
+	    };
 
         _this.cutWord = function(){
 
@@ -108,7 +108,7 @@
 				_this.settings["onComplete"](_this.$el);
 	        }
 
-		}
+		};
 
 		_this.waitElementToShow = function(){
 			var _this = this;
@@ -119,7 +119,7 @@
 									clearInterval(_this.waitElement);
 								}
 						},_this.settings["waitTime"]);
-		}
+		};
 
         _this.init = function(){
 
@@ -151,5 +151,3 @@
     };
 
 })(jQuery);
-
-
