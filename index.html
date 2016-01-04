@@ -1,55 +1,55 @@
 <!DOCTYPE html>
 <html>
-
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Jjjud.GitHub.io : &quot;Jud jud jud&quot; is jQuery plugin for the truncation of text to suitable with Thai language which is not separate the word with space. It shortens provided text to fit specified dimensions and appends the desired ellipsis style if/when truncation occurs.">
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Jjjud.GitHub.io</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/jjjud">View on GitHub</a>
-
-          <h1 id="project_title">Jjjud.GitHub.io</h1>
-          <h2 id="project_tagline">&quot;Jud jud jud&quot; is jQuery plugin for the truncation of text to suitable with Thai language which is not separate the word with space. It shortens provided text to fit specified dimensions and appends the desired ellipsis style if/when truncation occurs.</h2>
-
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <p>JJJud.js</p>
-
-<p>"Jud jud jud" is jQuery plugin for the truncation of text to suitable with Thai language which is not separate the word with space. It shortens provided text to fit specified dimensions and appends the desired ellipsis style if/when truncation occurs.</p>
-
-<p>to see demo: <a href="http://jjjud.github.io">http://jjjud.github.io</a></p>
-
-<h1>
-<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use:</h1>
-
-<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">"</span>.panel1<span class="pl-pds">"</span></span>).<span class="pl-en">JJJud</span>({
-        max_rows<span class="pl-k">:</span> <span class="pl-c1">3</span>
-});</pre></div>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-1.11.2.min.js"></script>
+	<script src="jjjud.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".panel1 span").JJJud({
+				max_rows: 3
+			});
+		});
+	</script>
+	<style type="text/css">
+		.panel1{
+			width: 100px;
+			height: 100px;
+			/*font-size: 20px;*/
+			/*line-height: 20px;*/
+		}
+		.text2{
+			font-size: 20px;
+		}
+		.text3{
+			font-size: 9px;
+		}
+		.text4{
+			font-size: 36px;
+		}
+	</style>
+</head>
+<body>
+	<div class="panel1">
+		<span class="text1">
+			สวัสดีชาวโลก สวัสดีชาวโลก สวัสดีชาวโลก สวัสดีชาวโลก
+		</span>
+	</div>
+	<div class="panel1">
+		<span class="text2">
+			สวัสดีชาวโลก สวัสดีชาวโลก สวัสดีชาวโลก สวัสดีชาวโลก
+		</span>
+	</div>
+	<div class="panel1">
+		<span class="text3">
+			สวัสดีชาวโลก สวัสดีชาวโลก สวัสดีชาวโลก สวัสดีชาวโลก
+		</span>
+	</div>
+	<div class="panel1">
+		<span class="text4">
+			สวัสดีชาวโลก สวัสดีชาวโลก สวัสดีชาวโลก สวัสดีชาวโลก
+		</span>
+	</div>
+</body>
 </html>
